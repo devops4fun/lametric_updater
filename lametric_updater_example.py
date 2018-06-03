@@ -5,12 +5,10 @@
 ##->pre-req:
 ##->***script needs read/write access to the directory it is being executed from
 #scrape url parse html
-import ast, urllib2, urllib, HTMLParser, os, json, time # for file system activities
+import ast, urllib2, urllib, HTMLParser, os, json, time
 
 print('The LaMetric updater script has begun...Please be patience')
-# Preliminary items
-#Some global variables
-#ideas.lego.com url string
+
 myurl = "enter you url here"
 
 #laMetric device url string
@@ -105,9 +103,7 @@ def updateLametric(num_supporters):
 
 	#submit the POST request
 	request = urllib2.Request(url2, data=json.dumps(js, sort_keys=True, indent=2, separators=(',', ': ')), headers=content_header)
-	# print request.get_host()
-	# print request.get_full_url()
-	# print request.get_data()
+
 	# # overload the get method function with a small anonymous function...
 	request.get_method = lambda: method
 
